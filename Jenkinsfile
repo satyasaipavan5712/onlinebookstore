@@ -3,8 +3,10 @@ pipeline {
         stages {  
        	    stage("git_checkout") {  
            	    steps {  
-              	    echo "cloning repository" 
-              	    echo "repo cloned successfully"  
+              	    sh '''mvn validate
+                          mvn compile
+                          mvn test
+                          mvn package'''
               	    }  
          	    } 
         }
